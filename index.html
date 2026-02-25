@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Thomas Arnaud — Candidature | Assistant(e) Marketing</title>
+
+  <style>
+    :root{
+      --text:#ffffff;
+      --muted:rgba(255,255,255,.80);
+      --muted2:rgba(255,255,255,.62);
+      --bgOverlay:rgba(0,0,0,.45);
+      --panel:rgba(0,0,0,.72);
+      --line:rgba(255,255,255,.12);
+      --accent:#d4a55d;
+      --max:1100px;
+      --radius:16px;
+    }
+
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{height:100%}
+    body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      color:var(--text);
+      background: url("choco.jpg") center/cover no-repeat fixed;
+      overflow-x:hidden;
+    }
+
+    body::before{
+      content:"";
+      position:fixed; inset:0;
+      background: var(--bgOverlay);
+      z-index:-1;
+    }
+
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max);margin:0 auto;padding:28px 18px 90px}
+
+    .top{
+      position:sticky;top:0;z-index:50;
+      backdrop-filter: blur(10px);
+      background: rgba(0,0,0,.35);
+      border-bottom:1px solid var(--line);
+    }
+    .top .inner{
+      max-width:var(--max);
+      margin:0 auto;
+      padding:14px 18px;
+      display:flex;align-items:center;justify-content:space-between;gap:14px;
+    }
+    .brand{display:flex;align-items:center;gap:10px;font-weight:700;letter-spacing:.2px}
+    .dot{
+      width:10px;height:10px;border-radius:99px;
+      background:linear-gradient(135deg,var(--accent),#ffe0a9);
+      box-shadow:0 0 0 6px rgba(212,165,93,.16);
+    }
+    nav{display:flex;gap:10px;flex-wrap:wrap}
+    nav a{
+      font-size:13px;color:var(--muted2);
+      padding:8px 10px;border-radius:999px;
+      border:1px solid transparent;
+      transition:.2s ease;
+    }
+    nav a:hover{color:var(--text);border-color:var(--line);background:rgba(255,255,255,.05)}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:10px 14px;font-size:13px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.05);
+      transition:.2s ease;
+      cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-1px);background:rgba(255,255,255,.08)}
+    .btn.primary{border-color:rgba(212,165,93,.55);background:rgba(212,165,93,.18)}
+
+    section{padding:70px 0}
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:var(--radius);
+      padding:26px;
+    }
+    h1{
+      font-size: clamp(34px, 5vw, 58px);
+      line-height:1.0;
+      letter-spacing:-1px;
+      margin-bottom:14px;
+    }
+    h2{
+      font-size: clamp(22px, 3vw, 34px);
+      letter-spacing:-.4px;
+      margin-bottom:14px;
+    }
+    p{color:var(--muted);line-height:1.7;font-size:18px}
+    .small{font-size:14px;color:var(--muted2)}
+    .accent{color:var(--accent);font-weight:800}
+    .sp{height:18px}
+    .center{text-align:center;max-width:940px;margin:0 auto}
+
+    /* Hero */
+    .hero{
+      display:grid;
+      grid-template-columns: 1.35fr .65fr;
+      gap:16px;
+      align-items:start;
+      padding-top:36px;
+    }
+    @media (max-width: 920px){ .hero{grid-template-columns:1fr} }
+
+    .kicker{
+      display:inline-flex;gap:10px;align-items:center;
+      padding:8px 12px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.04);
+      color:var(--muted2);
+      font-size:13px;
+      width:fit-content;
+      margin-bottom:16px;
+    }
+    .tagrow{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+    .tag{
+      font-size:12px;padding:8px 10px;border-radius:999px;
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
+      color:var(--muted2);
+    }
+
+    .facts{display:grid;gap:10px;margin-top:14px}
+    .fact{
+      display:flex;justify-content:space-between;gap:10px;
+      padding:10px 12px;border-radius:14px;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+      font-size:13px;
+    }
+    .fact span{color:var(--muted2)}
+    .fact b{font-weight:800}
+
+    /* Images row */
+    .images{
+      display:flex;gap:16px;flex-wrap:wrap;
+      margin-bottom:22px;
+    }
+    .images img{
+      width:calc(50% - 8px);
+      height:380px;
+      object-fit:cover;
+      border-radius:12px;
+      border:1px solid var(--line);
+    }
+    @media (max-width: 820px){
+      .images img{width:100%;height:320px}
+    }
+
+    /* Single image block */
+    .imgBlock{
+      width:100%;
+      max-width:950px;
+      margin:0 auto 22px;
+      border-radius:12px;
+      overflow:hidden;
+      border:1px solid var(--line);
+      background:rgba(0,0,0,.18);
+    }
+    .imgBlock img{
+      width:100%;
+      height:520px;
+      object-fit:cover;
+      display:block;
+    }
+    @media (max-width: 820px){ .imgBlock img{height:360px} }
+
+    /* Lists */
+    ul.clean{
+      list-style:none;
+      margin:14px auto 0;
+      padding:0;
+      max-width:760px;
+    }
+    ul.clean li{
+      padding:10px 12px;
+      margin:8px 0;
+      border:1px solid var(--line);
+      border-radius:12px;
+      background:rgba(0,0,0,.18);
+      color:var(--muted);
+      font-size:16px;
+    }
+
+    /* Board */
+    .board{
+      column-count:3;
+      column-gap:14px;
+      margin-top:14px;
+    }
+    @media (max-width: 980px){ .board{column-count:2} }
+    @media (max-width: 620px){ .board{column-count:1} }
+
+    .tile{
+      break-inside:avoid;
+      margin:0 0 14px;
+      border:1px solid var(--line);
+      border-radius:14px;
+      background:rgba(0,0,0,.18);
+      overflow:hidden;
+    }
+    .tile img{width:100%;display:block}
+    .tile .meta{padding:12px}
+    .tile .meta b{display:block;margin-bottom:4px;font-size:13px}
+    .tile .meta span{color:var(--muted2);font-size:12px;line-height:1.4;display:block}
+    .tile .meta .linkrow{margin-top:10px;display:flex;gap:10px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{
+      margin-top:22px;
+      padding-top:18px;
+      border-top:1px solid var(--line);
+      color:var(--muted2);
+      font-size:12px;
+      display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    }
+
+    /* Signature line */
+    .sigline{
+      margin-top:14px;
+      font-size:13px;
+      color:var(--muted2);
+    }
+    .sigline b{color:#fff}
+  </style>
+</head>
+
+<body>
+  <header class="top">
+    <div class="inner">
+      <div class="brand">
+        <span class="dot"></span>
+        <span>Thomas Arnaud</span>
+      </div>
+
+      <nav>
+        <a href="#martinique">Origines</a>
+        <a href="#etude">Étude de marché</a>
+        <a href="#croissance">Croissance</a>
+        <a href="#board">Réalisations</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div style="display:flex;gap:10px;align-items:center;">
+        <a class="btn" href="#contact">Me contacter</a>
+       <button class="btn cv-btn" id="btnCV">
+  <span class="cv-icon">⬇</span>
+  Télécharger CV
+</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+
+    <!-- HERO -->
+    <section>
+      <div class="hero">
+        <div class="panel">
+          <div class="kicker">Assistant(e) Marketing (Bilingue) — <b>Volet Exécution</b></div>
+
+          <!-- (1) -->
+          <h1>Thomas Arnaud</h1>
+
+          <!-- (3) -->
+          <p>
+            Étudiant au baccalauréat en administration des affaires à l’UQAM, spécialisé en marketing, avec une diplomation prévue en juin 2026.
+          </p>
+          <p class="sp"></p>
+          <p>
+            Au cours des trois dernières années, j’ai développé une vision globale de l’entreprise, de la comptabilité aux différentes fonctions du marketing.
+          </p>
+          <p class="sp"></p>
+          <p>
+            Je mets à profit ma créativité dans la conception de supports visuels professionnels (Canva) ainsi que dans la réalisation de projets concrets, notamment avec l’impression 3D.
+          </p>
+          <p class="sp"></p>
+          <p>
+            Mon parcours inclut des mandats réels pour des organisations, dont une étude quantitative pour le Ginkgo Café et un projet de commandite pour l’OBNL Fillactive (hiver 2026).
+          </p>
+          <p class="sp"></p>
+          <p>
+            Rigoureux, créatif et orienté résultats, je souhaite contribuer à des projets marketing à fort impact.
+          </p>
+
+          <!-- (4) -->
+          <div class="sp"></div>
+          <p class="small">Disponibilité : 20 h / semaine • 3 jours • flexible • immédiat</p>
+
+          <div class="tagrow">
+            <span class="tag">Canva</span>
+            <span class="tag">PowerPoint</span>
+            <span class="tag">Excel</span>
+            <span class="tag">Réseaux sociaux</span>
+            <span class="tag">FR / EN</span>
+          </div>
+        </div>
+
+        <!-- (5) -->
+        <aside class="panel">
+          <h2 style="margin-bottom:10px;">Faits rapides</h2>
+          <div class="facts">
+            <div class="fact"><span>Retail premium</span><b>9/11 objectifs mensuels de vente (2025)</b></div>
+            <div class="fact"><span>Relation client</span><b>Portefeuille ~15 clients</b></div>
+            <div class="fact"><span>Opérations</span><b>Dispatch & délais</b></div>
+            <div class="fact"><span>Outils</span><b>Canva • PPT • Excel</b></div>
+          </div>
+          <div class="sp"></div>
+          <a class="btn" href="#board">Voir mes réalisations</a>
+        </aside>
+      </div>
+    </section>
+
+    <!-- (5) ORIGINES + cacao.jpg déplacée ici -->
+    <section id="martinique">
+      <div class="panel">
+        <h2>Originaire de la Martinique</h2>
+
+        <div class="images">
+          <img src="martinique1.jpg" alt="Martinique — plage au coucher du soleil">
+          <img src="martinique2.jpg" alt="Martinique — paysage mer et ciel">
+        </div>
+
+        <div class="imgBlock">
+          <img src="cacao.jpg" alt="Cabosses de cacao sur un arbre">
+        </div>
+
+        <div class="center">
+          <p>
+            Originaire de la Martinique, j’ai grandi au contact de la nature, développant une passion pour la randonnée, l’environnement et les savoir-faire locaux.
+          </p>
+          <p class="sp"></p>
+          <p>
+            J’ai notamment eu l’opportunité de participer à la fabrication du chocolat de A à Z, de la récolte des cabosses à la transformation, une expérience concrète au cœur de la chaîne de valeur.
+          </p>
+          <p class="sp"></p>
+          <p>
+            Ayant grandi sur une île ouverte sur le monde, j’ai rapidement développé un intérêt pour le commerce international et le marketing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- (6) Étude de marché -->
+    <section id="etude">
+      <div class="panel">
+        <h2>Présentation d’une brève étude de marché de l’industrie du chocolat</h2>
+
+        <div class="center">
+          <p>
+            Québec — Vividata (Hiver 2025) : 69,56 % des répondants âgés de 14 ans et plus déclarent avoir consommé du chocolat au cours des 6 derniers mois (≈ 5,4 M de consommateurs).
+          </p>
+        </div>
+
+        <ul class="clean">
+          <li><b>65 ans et +</b> : 24,32 % du marché</li>
+          <li><b>50–64 ans</b> : 23,43 %</li>
+          <li><b>35–49 ans</b> : 21,73 %</li>
+        </ul>
+
+        <div class="sigline center">
+          <span id="todayA"></span> — <b>Thomas. A</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- (7) Croissance du marché (sans image ici) -->
+    <section id="croissance">
+      <div class="panel">
+        <h2>Croissance du marché du chocolat au Canada</h2>
+
+        <div class="center">
+          <p>
+            Selon Statistique Canada, les dépenses moyennes des ménages canadiens en tablettes de chocolat sont passées de <span class="accent">88 $</span> en 2019 à <span class="accent">119 $</span> en 2023, soit une hausse de consommation supérieure à <span class="accent">35 %</span>.
+          </p>
+        </div>
+
+        <div class="sigline center">
+          <span id="todayB"></span> — <b>Thomas. A</b>
+        </div>
+      </div>
+    </section>
+
+    <!-- (8) Board avec images réelles + PDF -->
+    <section id="board">
+      <div class="panel">
+        <h2>Réalisations</h2>
+
+        <div class="board">
+
+          <article class="tile">
+            <img src="3d1.jpg" alt="Impression 3D — préparation du modèle">
+            <div class="meta">
+              <b>Projet 3D — Jeu d’échecs</b>
+              <span>Conception + itérations : je développe ma créativité en passant du concept au concret.</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <img src="3d2.jpg" alt="Impression 3D — planification des impressions">
+            <div class="meta">
+              <b>Impression 3D — Production</b>
+              <span>Organisation, précision, contrôle qualité.</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <img src="caa.jpg" alt="Poste de travail — CAA-Québec (dispatch)">
+            <div class="meta">
+              <b>CAA-Québec — Poste de travail</b>
+              <span>Coordination sous pression, suivi, dispatch & gestion des délais.</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <!-- fichier: CG vitrine.jpg (avec espace) -->
+            <img src="CG%20vitrine.jpg" alt="Canada Goose — mise en place vitrine">
+            <div class="meta">
+              <b>Canada Goose — Vitrine</b>
+              <span>Participation à la mise en place : cohérence de marque, esthétique et exécution.</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <!-- fichier: commandite CG.jpg (avec espace) -->
+            <img src="commandite%20CG.jpg" alt="Canada Goose — activation commandite (portrait)">
+            <div class="meta">
+              <b>Canada Goose — Activation / commandite</b>
+              <span>Expérience client : artiste sur place (1 h) pour des portraits personnalisés.</span>
+            </div>
+          </article>
+
+          <article class="tile">
+            <div class="meta">
+              <b>Témoignage — Canada Goose (PDF)</b>
+              <span>Retour écrit sur mon travail (fichier PDF).</span>
+              <div class="linkrow">
+                <a class="btn" href="Mail%20Canada%20Goose%20Avis%20-%20Christina%20et%20Gina.pdf%20ver%20C.pdf" target="_blank" rel="noopener">Ouvrir le PDF</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- (10) CONTACT -->
+    <section id="contact">
+      <div class="panel">
+        <h2>Contact</h2>
+        <div class="sp"></div>
+
+        <div class="panel" style="background:rgba(0,0,0,.38);">
+          <p>
+            Montréal, QC<br>
+            Téléphone : <a href="tel:+15142268868" style="text-decoration:underline;text-underline-offset:3px;">514 226 8868</a><br>
+            Courriel : <a href="mailto:arnaudthomas972@gmail.com" style="text-decoration:underline;text-underline-offset:3px;">arnaudthomas972@gmail.com</a><br>
+            LinkedIn :
+            <a href="https://www.linkedin.com/in/thomas-arnaud-ba179b1bb/?locale=en_US" target="_blank" rel="noopener" style="text-decoration:underline;text-underline-offset:3px;">
+              thomas-arnaud-ba179b1bb
+            </a>
+          </p>
+        </div>
+
+        <footer>
+          <div>© <span id="year"></span> Thomas Arnaud</div>
+          <div>index.html</div>
+        </footer>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // CV PDF (mettez votre fichier au même endroit que index.html)
+    const CV_PDF_URL = "cv-thomas-arnaud.pdf";
+
+    document.getElementById("btnCV").addEventListener("click", () => {
+      window.open(CV_PDF_URL, "_blank");
+    });
+
+    // Date du jour (format FR)
+    const d = new Date();
+    const fr = d.toLocaleDateString("fr-CA", { year:"numeric", month:"long", day:"numeric" });
+    document.getElementById("todayA").textContent = fr;
+    document.getElementById("todayB").textContent = fr;
+
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Smooth scroll
+    document.querySelectorAll('nav a[href^="#"]').forEach(a => {
+      a.addEventListener("click", (e) => {
+        e.preventDefault();
+        const target = document.querySelector(a.getAttribute("href"));
+        if(target) target.scrollIntoView({behavior:"smooth", block:"start"});
+      });
+    });
+  </script>
+</body>
+</html>
